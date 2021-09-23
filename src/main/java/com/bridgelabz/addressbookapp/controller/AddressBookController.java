@@ -74,7 +74,7 @@ public class AddressBookController {
     public ResponseEntity<ResponseDTO> updateAddresBookData(@PathVariable("id") int id,
                                                        @RequestBody AddressBookDTO addressBookDTO){
         AddressBookData bookData=null;
-        bookData=addressBookService.updateAddressBookData(addressBookDTO);
+        bookData=addressBookService.updateAddressBookData(id,addressBookDTO);
         ResponseDTO respDTO=new ResponseDTO("Update succesfull ", bookData);
 
         return  new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);

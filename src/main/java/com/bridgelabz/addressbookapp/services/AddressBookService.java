@@ -9,36 +9,47 @@ import java.util.List;
 //Service Autowire in controller
 @Service
 public class AddressBookService implements IAddressBookService{
+
+    private List<AddressBookData>  addressBookDataList=new ArrayList<>();
+
+
+
     @Override
     public List<AddressBookData> getAddressBookData() {
-        List<AddressBookData> dataList=new ArrayList<>();
-        dataList.add(new AddressBookData(1, new AddressBookDTO("Bhupendra","Govind Colony","Amla","MP","wadekar.bhupendra6@gmail.com","460551","9893902047")));
-        return dataList;
+        return addressBookDataList;
     }
 
     @Override
-    public AddressBookData getAddressBookDataById(int Id) {
-        AddressBookData addressBookData=null;
-        addressBookData=new AddressBookData(1, new AddressBookDTO("Bhupendra","Govind Colony","Amla","MP","wadekar.bhupendra6@gmail.com","460551","9893902047"));
-        return addressBookData;
+    public AddressBookData getAddressBookDataById(int id) {
+
+        return addressBookDataList.get(id);
     }
 
     @Override
     public AddressBookData createAddressBookData(AddressBookDTO addressBookDTO) {
         AddressBookData addressBookData=null;
-        addressBookData=new AddressBookData(1,addressBookDTO);
+        addressBookData=new AddressBookData(addressBookDataList.size()+1,addressBookDTO);
+        addressBookDataList.add(addressBookData);
         return addressBookData;
     }
 
     @Override
-    public AddressBookData updateAddressBookData(AddressBookDTO addressBookDTO) {
-        AddressBookData addressBookData=null;
-        addressBookData=new AddressBookData(1,addressBookDTO);
+    public AddressBookData updateAddressBookData(int id,AddressBookDTO addressBookDTO) {
+        AddressBookData addressBookData=this.getAddressBookDataById(id);
+        addressBookData.setFullName(addressBookDTO.fullName);
+        addressBookData.setAddress(addressBookDTO.address);
+        addressBookData.setCity(addressBookDTO.city);
+        addressBookData.setState(addressBookDTO.state);
+        addressBookData.setEmailId(addressBookDTO.emailId);
+        addressBookData.setZip(addressBookDTO.zip);
+        addressBookData.setPhoneNumber(addressBookDTO.phoneNumber);
+        addressBookDataList.set(id-1,addressBookData);
         return addressBookData;
     }
 
     @Override
-    public void deleteAddressBookData(int Id) {
+    public void deleteAddressBookData(int id) {
+        addressBookDataList.remove(id-1);
 
     }
 }
