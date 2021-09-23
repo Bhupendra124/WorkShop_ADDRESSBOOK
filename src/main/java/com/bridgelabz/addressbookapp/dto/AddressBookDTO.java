@@ -2,7 +2,7 @@ package com.bridgelabz.addressbookapp.dto;
 
 public class AddressBookDTO {
 
-    public String firstName;
+    public String fullName;
     public String address;
     public String city;
     public String state;
@@ -11,7 +11,7 @@ public class AddressBookDTO {
     public String phoneNumber;
 
     public AddressBookDTO(String firstName, String address, String city, String state, String emailId, String zip, String phoneNumber) {
-        this.firstName = firstName;
+        this.fullName = firstName;
         this.address = address;
         this.city = city;
         this.state = state;
