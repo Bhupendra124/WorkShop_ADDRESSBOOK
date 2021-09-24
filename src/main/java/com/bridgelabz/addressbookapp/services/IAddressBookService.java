@@ -12,4 +12,7 @@ public interface IAddressBookService {
     AddressBookData createAddressBookData(AddressBookDTO addressBookDTO);
     AddressBookData updateAddressBookData(int id, AddressBookDTO addressBookDTO);
     void deleteAddressBookData(int Id);
+
+  List<AddressBookData> getAddressBookDataByCity(String city);
+
 }

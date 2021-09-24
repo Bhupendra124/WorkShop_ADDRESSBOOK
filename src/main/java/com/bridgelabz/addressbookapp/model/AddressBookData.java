@@ -43,15 +43,7 @@ public class AddressBookData {
     public AddressBookData(int id, AddressBookDTO addressBookDTO) {
     }
 
-//    private void updateAddresBookData(AddressBookDTO addressBookDTO) {
-//        this.fullName=addressBookDTO.fullName;
-//        this.address=addressBookDTO.address;
-//        this.city=addressBookDTO.city;
-//        this.state=addressBookDTO.state;
-//        this.emailId=addressBookDTO.emailId;
-//        this.zip=addressBookDTO.zip;
-//        this.phoneNumber=addressBookDTO.phoneNumber;
-//    }
+
 
 
     public void updateAddressBookData(AddressBookDTO addressBookDTO) {

@@ -41,6 +41,16 @@ public class AddressBookController {
         ResponseDTO respDTO=new ResponseDTO("Get call For ID Sucess", bookData);
         return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
     }
+    /**
+     * Purpose : Search Data by City name from AddressBook ........
+     */
+
+    @GetMapping("/city")
+    public ResponseEntity<ResponseDTO> getContactDetailsByCity(@RequestParam(name = "city") String city){
+        List<AddressBookData> SearchByCity = addressBookService.getAddressBookDataByCity(city);
+        ResponseDTO responseDTO = new ResponseDTO("Detail Get By City Name :",SearchByCity);
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+    }
 
     /**
      * add data

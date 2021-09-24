@@ -34,17 +34,12 @@ public class AddressBookDTO {
 
     @NotNull(message = "Zip should not be Empty")
     public String zip;
+
+
+    @NotNull(message = "Phone Number should not be Empty")
     public String phoneNumber;
 
-//    public AddressBookDTO(String firstName, String address, String city, String state, String emailId, String zip, String phoneNumber) {
-//        this.fullName = firstName;
-//        this.address = address;
-//        this.city = city;
-//        this.state = state;
-//        this.emailId = emailId;
-//        this.zip = zip;
-//        this.phoneNumber = phoneNumber;
-//    }
+
 
 
     @Override

@@ -3,7 +3,7 @@ package com.bridgelabz.addressbookapp.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.NotEmpty;
+
 
 @Data
 @ToString

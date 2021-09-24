@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 //Service Autowire in controller
 @Service
@@ -31,7 +30,7 @@ public class AddressBookService implements IAddressBookService{
     @Override
     public AddressBookData getAddressBookDataById(int id) {
 
-        return addressBookRespository
+        return (AddressBookData) addressBookRespository
                 .findById(id)
                 .orElseThrow(() -> new AddressbookException("Contact With Contact id :"+id+" does not exists...!!"));
     }
@@ -58,4 +57,13 @@ public class AddressBookService implements IAddressBookService{
        addressBookRespository.delete(addressBookData);
 
     }
+
+
+
+
+    public List<AddressBookData> getAddressBookDataByCity(String city) {
+        return addressBookRespository.getAddressBookDataByCity(city);
+    }
+
+
 }

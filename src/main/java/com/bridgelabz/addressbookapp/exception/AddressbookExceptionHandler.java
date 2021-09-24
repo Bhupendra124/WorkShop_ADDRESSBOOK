@@ -50,10 +50,6 @@ public class AddressbookExceptionHandler {
      * @return
      */
 
-/*    @ExceptionHandler(AddressbookException.class)
-    public ResponseEntity<ResponseDTO> handleAddressBookException(AddressbookException exception){
-        ResponseDTO responseDTO = new ResponseDTO("Exception while REST Request", exception.getMessage());
-        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.LOCKED);
-    }*/
+
 
 }
