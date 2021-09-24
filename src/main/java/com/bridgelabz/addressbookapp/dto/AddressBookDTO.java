@@ -45,4 +45,18 @@ public class AddressBookDTO {
 //        this.zip = zip;
 //        this.phoneNumber = phoneNumber;
 //    }
+
+
+    @Override
+    public String toString() {
+        return "AddressBookDTO{" +
+                "fullName='" + fullName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", zip='" + zip + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }

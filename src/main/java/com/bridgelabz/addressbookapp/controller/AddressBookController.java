@@ -13,14 +13,9 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/addressbook")
-/**
- * url--get--readdata
- * Get---localhost:8082/addressbook/get
- * return--Get Call Sucess
- *
- */
+@RequestMapping("/address_book")
 public class AddressBookController {
+
 //Dependancy injection
     @Autowired
     private IAddressBookService addressBookService;
@@ -55,7 +50,7 @@ public class AddressBookController {
      */
 
     @PostMapping("/create")
-    public ResponseEntity<ResponseDTO> addAddresBookData(
+    public ResponseEntity<ResponseDTO> createAddresBookData(
         @Valid @RequestBody AddressBookDTO addressBookDTO){
         AddressBookData bookData=null;
         bookData=addressBookService.createAddressBookData(addressBookDTO);
