@@ -5,19 +5,27 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @Data
-//@Entity
-//@Table(name = "contact_book")
+@Entity
+@Table(name = "contact_book")
 public class AddressBookData {
-
-//    @Id
+    /**
+     * @Entity- Annotation tells hybernate to create a table
+     * @Table-specifies the mapped Table in DB
+     * @Id-specify the Primary Key And Id genration is set to auto
+     * @Column-specifiyes name of column
+     *
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "contact_id")
     private int id;
+
+
     public String fullName;
     public String address;
     public String city;
@@ -26,11 +34,16 @@ public class AddressBookData {
     public String zip;
     public String phoneNumber;
 
-    public AddressBookData() {
+    public AddressBookData() {}
+
+    public AddressBookData(AddressBookDTO addressBookDTO){
+        this.updateAddresBookData(addressBookDTO);
     }
 
-    public AddressBookData(int id , AddressBookDTO addressBookDTO) {
-        this.id=id;
+    public AddressBookData(int id, AddressBookDTO addressBookDTO) {
+    }
+
+    private void updateAddresBookData(AddressBookDTO addressBookDTO) {
         this.fullName=addressBookDTO.fullName;
         this.address=addressBookDTO.address;
         this.city=addressBookDTO.city;
@@ -38,9 +51,9 @@ public class AddressBookData {
         this.emailId=addressBookDTO.emailId;
         this.zip=addressBookDTO.zip;
         this.phoneNumber=addressBookDTO.phoneNumber;
-
-
     }
+
+
 
 
 }
